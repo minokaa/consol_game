@@ -1,6 +1,8 @@
 #include <iostream>
+#include <windows.h>
 
 int main() {
+	SetConsoleOutputCP(CP_UTF8);
 
 	int HP = 10;
 	int damage = 0;
@@ -21,6 +23,7 @@ int main() {
 		<< "HP_grr: " << HP_grr << std::endl;;
 
 	while (status_menu != 0) {
+
 		srand(time(NULL));
 
 		std::cout << std::endl;
@@ -58,7 +61,7 @@ int main() {
 			HP_grr -= c_damage;
 			HP -= damage;
 
-			std::cout << "HP: " << HP << std::endl
+			std::cout << std::endl << "HP: " << HP << std::endl
 				<< "damage: " << damage << std::endl
 				<< "HP_grr: " << HP_grr << std::endl;
 			if (HP <= 0) {
@@ -68,7 +71,9 @@ int main() {
 			}
 			if (HP_grr <= 0) {
 				std::cout << std::endl;
-				std::cout << "WIN" << std::endl;
+				std::cout << "================" << std::endl
+					<< "WIN" << std::endl
+					<< "================" << std::endl << std::endl;
 				HP_grr_default *= 1.3;
 				damage_def *= 1.3;
 				HP_grr = HP_grr_default;
@@ -84,6 +89,7 @@ int main() {
 				<< "SHOP" << std::endl
 				<< "================" << std::endl
 				<< "money: " << money << std::endl
+				<< "================" << std::endl
 				<< "damage/protection/healthup" << std::endl;
 			std::cin >> shop;
 			switch (shop) {
@@ -94,7 +100,7 @@ int main() {
 				}
 				else {
 					std::cout << std::endl;
-					std::cout << "NO MONEY" << std::endl;
+					std::cout << "NO MONEY :c" << std::endl;
 				}
 				break;
 			case 2:
@@ -104,7 +110,7 @@ int main() {
 				}
 				else {
 					std::cout << std::endl;
-					std::cout << "NO MONEY" << std::endl;
+					std::cout << "NO MONEY :c" << std::endl;
 				}
 				break;
 			case 3:
@@ -114,7 +120,7 @@ int main() {
 				}
 				else {
 					std::cout << std::endl;
-					std::cout << "NO MONEY" << std::endl;
+					std::cout << "NO MONEY :c" << std::endl;
 				}
 				break;
 			default:
@@ -126,3 +132,4 @@ int main() {
 
 	return 0;
 }
+
