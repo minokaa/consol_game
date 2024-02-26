@@ -98,14 +98,14 @@ int main() {
 				<< "================" << std::endl
 				<< "money: " << money << std::endl
 				<< "================" << std::endl
-				<< 7.6 * money_sex << "    " << 10 * money_sex << "        " << 3.8  * money_sex << std::endl
+				<< (int)(7.7 * money_sex) << "    " << (int)(10 * money_sex) << "        " << (int)(3.9 * money_sex) << std::endl
 				<< "damage/protection/healthup" << std::endl;
 			std::cin >> shop;
 			switch (shop) {
 			case 1:
 				if (money >= 7.6 * money_sex) {
 					d1++;
-					money -= (7.6 * money_sex);
+					money -= (int)(7.6 * money_sex);
 					money_sex += 0.2;
 				}
 				else {
@@ -116,7 +116,7 @@ int main() {
 			case 2:
 				if (money >= 10 * money_sex) {
 					p1++;
-					money -= (10 * money_sex);
+					money -= (int)(10 * money_sex);
 					money_sex += 0.2;
 				}
 				else {
@@ -125,9 +125,9 @@ int main() {
 				}
 				break;
 			case 3:
-				if (money >= 3.8 * money_sex) {
+				if (money >= 3.9 * money_sex) {
 					HP += 3;
-					money -= (3.8 * money_sex);
+					money -= (int)(3.9 * money_sex);
 					money_sex += 0.2;
 				}
 				else {
