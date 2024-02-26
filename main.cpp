@@ -98,6 +98,7 @@ int main() {
 				<< "================" << std::endl
 				<< "money: " << money << std::endl
 				<< "================" << std::endl
+				<< 7.6 * money_sex << "    " << 10 * money_sex << "        " << 3.8  * money_sex << std::endl
 				<< "damage/protection/healthup" << std::endl;
 			std::cin >> shop;
 			switch (shop) {
