@@ -18,6 +18,7 @@ int main() {
 	int HP_grr_default = 20;
 	int money_def = 5;
 	int damage_def = 3;
+	float money_sex = 1.3;
 
 	std::cout << "HP: " << HP << std::endl
 		<< "HP_grr: " << HP_grr << std::endl;;
@@ -28,7 +29,9 @@ int main() {
 
 		std::cout << std::endl;
 		std::cout << "hit/shop/quit" << std::endl;
-		std::cin >> input_menu;
+		std::cin >> input_menu;		//menu
+		
+		
 		switch (input_menu)
 		{
 		case 1:
@@ -44,7 +47,8 @@ int main() {
 			status_menu = 0;
 			break;
 		}
-		if (status_menu == 1) {
+
+		if (status_menu == 1) {		// fight
 			c_damage = 4 + rand() % 10;
 			rand_int = 1 + rand() % 7;
 			if (rand_int < 4) {
@@ -61,7 +65,10 @@ int main() {
 			HP_grr -= c_damage;
 			HP -= damage;
 
-			std::cout << std::endl << "HP: " << HP << std::endl
+			std::cout << std::endl
+				<< "FIGHT" << std::endl
+				<< std::endl
+				<< "HP: " << HP << std::endl
 				<< "damage: " << damage << std::endl
 				<< "HP_grr: " << HP_grr << std::endl;
 			if (HP <= 0) {
@@ -83,7 +90,8 @@ int main() {
 				money_def *= 1.5;
 			}
 		}
-		else if (status_menu == 2) {
+
+		else if (status_menu == 2) {	//shop
 			std::cout << std::endl;
 			std::cout << "================" << std::endl
 				<< "SHOP" << std::endl
@@ -94,9 +102,10 @@ int main() {
 			std::cin >> shop;
 			switch (shop) {
 			case 1:
-				if (money >= 10) {
+				if (money >= 7.6 * money_sex) {
 					d1++;
-					money -= 10;
+					money -= (7.6 * money_sex);
+					money_sex += 0.2;
 				}
 				else {
 					std::cout << std::endl;
@@ -104,9 +113,10 @@ int main() {
 				}
 				break;
 			case 2:
-				if (money >= 13) {
+				if (money >= 10 * money_sex) {
 					p1++;
-					money -= 13;
+					money -= (10 * money_sex);
+					money_sex += 0.2;
 				}
 				else {
 					std::cout << std::endl;
@@ -114,9 +124,10 @@ int main() {
 				}
 				break;
 			case 3:
-				if (money >= 5) {
+				if (money >= 3.8 * money_sex) {
 					HP += 3;
-					money -= 5;
+					money -= (3.8 * money_sex);
+					money_sex += 0.2;
 				}
 				else {
 					std::cout << std::endl;
